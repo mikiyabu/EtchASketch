@@ -21,33 +21,30 @@ h1 {
     background-color: white;
     border-top: 8px solid black;;
     padding: 20px 30px;
+    width: 2000px;
     margin-top: 50px;
-    width: 9000px;
     text-align: center;
 }
 
 .grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
     background-color: white;
-    height: 800px;
-    width: 800px;
     border: 8px solid black;
-    padding: 25px;
+    padding: 20px;
 }
 
 .square {
     display: flex;
-    height: 150px;
+    border: 1px solid black;
+    border-radius: 3px;
+    min-height: 150px;
     width: 150px;
-    margin: 20px;
-    background-color: lightgrey;
+    margin: 1px;
+    transition: 120ms;
 }
 
-.square:hover {
-    transition: 150ms;
-    transform: scale(1.2);
-    background-color: grey;
+.active {
+    background-color: black;
 }

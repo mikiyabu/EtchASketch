@@ -1,8 +1,12 @@
-const grid = document.querySelector('.grid');
+const grid = document.querySelector('.grid'); 
 
-const square = document.createElement('div');
-square.classList.add('square');
 
 for (let i = 0; i < 16; i++) {
-    grid.appendChild(square.cloneNode(true));
+    const square = document.createElement('div');
+    grid.appendChild(square);
+    square.classList.add('square');
+    square.addEventListener('mouseover', () => {
+        square.classList.add('active');
+    });
 }
+
