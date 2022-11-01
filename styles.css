@@ -61,9 +61,10 @@ input:hover {
 }
 
 .grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
+    min-height: 100%;
     background-color: white;
     border: 8px solid black;
     padding: 20px;
@@ -71,10 +72,11 @@ input:hover {
 
 .square {
     display: flex;
+    flex-grow: 1;
+    height: 100%;
+    width: 100%;
     border: 1px solid black;
     border-radius: 3px;
-    min-height: 150px;
-    width: 150px;
     margin: 1px;
     transition: 150ms;
 }
