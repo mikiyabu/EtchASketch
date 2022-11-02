@@ -1,31 +1,32 @@
-const grid = document.querySelector('.grid'); 
+const board = document.querySelector('.board'); 
 const range = document.querySelector('input');
 const p = document.querySelector('p');
+const reset = document.querySelector('.reset');
 
-for (let r = 0; r < range.value; r++) {
-    for (let c = 0; c < range.value; c++) {
+board.style.gridTemplateColumns = `repeat(${range.value}, 1fr)`;
+board.style.gridTemplateRows = `repeat(${range.value}, 1fr)`;
+
+const newBoard = function() {
+    for (let r = 0; r < range.value * range.value; r++) {
         const square = document.createElement('div');
-        grid.appendChild(square);
+        board.appendChild(square);
         square.classList.add('square');
+
+        board.style.gridTemplateColumns = `repeat(${range.value}, 1fr)`;
+        board.style.gridTemplateRows = `repeat(${range.value}, 1fr)`;
+
         square.addEventListener('mouseover', () => {
-            square.classList.add('active');
+        square.classList.add('active');
         });
-    }
-} //creates an initial 16x16 grid
+    } //creates an initial 16x16 grid
+}
+
+newBoard();
 
 range.oninput = () => {
     p.textContent = range.value + ' x ' + range.value;
-    grid.innerHTML = '';
+    board.innerHTML = '';
     //resets the grid when user changes the range value
 
-    for (let r = 0; r < range.value; r++) {
-        for (let c = 0; c < range.value; c++) {
-            const square = document.createElement('div');
-            grid.appendChild(square);
-            square.classList.add('square');
-            square.addEventListener('mouseover', () => {
-                square.classList.add('active');
-            });
-        }
-    }
+    newBoard();
 } //allows for different grid sizes to be made by the user

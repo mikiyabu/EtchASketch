@@ -9,15 +9,22 @@
     <script src = "javascript.js" defer></script>
 </head>
 <body>
-    <h1>Etch a Sketch</h1>
-    
-    <p>16 x 16</p>
-    <input type = "range" min = "4" max = "64" step = "4" value = "16">
+    <div class = "content">
+        <div class = "left">
+            <h1>Etch a Sketch</h1>
+            <form>
+                <button class = "reset">Reset</button>
+            </form>
 
-    <div class = "grid"></div>
+            <p>16 x 16</p>
+            <input type = "range" min = "4" max = "64" step = "4" value = "16">
+        
+        </div>
+        <div class = "board"></div>
+    </div>
 
     <div class = "footer">
-        This is a footer by Mikiya Vadney
+        This is <strong>NOT</strong> a footer by Mikiya Vadney
     </div>
 </body>
 </html>
