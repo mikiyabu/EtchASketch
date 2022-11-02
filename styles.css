@@ -113,8 +113,12 @@ input:hover {
 .square {
     border-top: 1px solid black;
     border-right: 1px solid black;
-    border-radius: 1px;
     transition: 120ms;
+}
+
+.smallSquare {
+    border-top: 0.3px solid black;
+    border-right: 0.3px solid black;
 }
 
 .active {
